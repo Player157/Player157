@@ -1,0 +1,166 @@
+import java.io.IOException;
+import java.util.*;
+ 
+public class Main {
+ 
+    public static void main(String[] args) throws IOException, InterruptedException {
+        Scanner input = new Scanner(System.in);
+
+        int escolha, cadastro;
+        String usuario, senha, usuario1, senha1;
+        int para = 7, lanterna = 5, pneu = 4;
+        int escapamento = 4, capo = 2;
+        int quantidade = 0, escolha2 = 0, escolha3 = 0;
+        double valor = 0;
+
+        new ProcessBuilder("cmd", "/c", "pause").inheritIO().start().waitFor();
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        System.out.println("        Realize seu cadastro        ");
+        System.out.println("Digite seu usuario: ");
+        usuario = input.next();
+        System.out.println("Digite sua senha: ");
+        senha = input.next();
+
+        new ProcessBuilder("cmd", "/c", "pause").inheritIO().start().waitFor();
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
+        System.out.println("        Realize seu Login        ");
+        System.out.println("Digite seu usuario: ");
+        usuario1 = input.next();
+        System.out.println("Digite sua senha: ");
+        senha1 = input.next();
+
+            if(usuario1.equals(usuario) || senha1.equals(senha)){
+                System.out.println("Login realizado com sucesso!!");
+                do{
+                    System.out.println();
+                    new ProcessBuilder("cmd", "/c", "pause").inheritIO().start().waitFor();
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                    System.out.println("\n\n\n");
+                    System.out.println("<><>< I N S T I T U T O  M C P O Z E ><><><");
+                    System.out.println("<1> Compra");
+                    System.out.println("<2> Estoque");
+                    System.out.println("<3> Finalizar o programa");
+                    System.out.println("<><><><><><><><><><><><><><><><><><><><><><>");
+                    System.out.print("Opcao: ");
+                    escolha = input.nextInt();
+
+                    switch(escolha){
+                        case 1:
+                            new ProcessBuilder("cmd", "/c", "pause").inheritIO().start().waitFor();
+                            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                            do{
+                                System.out.println("        Estoque     ");
+                                System.out.println("<1> Para-choque: " + para + " VALOR: R$300,00");
+                                System.out.println("<2> Lanterna: " + lanterna + " VALOR: R$200,00");
+                                System.out.println("<3> Pneu: " + pneu + " VALOR: R$350,00");
+                                System.out.println("<4> Escapamento: " + escapamento + " VALOR: R$100,00");
+                                System.out.println("<5> Capo: " + capo + " VALOR: R$1000,00");
+                                System.out.println("<6> Finalizar o programa");
+                                System.out.println("Digite uma opção>: ");
+                                escolha2 = input.nextInt();
+                                switch(escolha2){
+                                    case 1:
+                                        System.out.println("Digite a quantidade que deseja comprar: ");
+                                        quantidade = input.nextInt();
+                                        para = para - quantidade;
+                                        valor = valor + 300 * quantidade;
+                                        break;
+                                    case 2:
+                                        System.out.println("Digite a quantidade que deseja comprar: ");
+                                        quantidade = input.nextInt();
+                                        lanterna = lanterna - quantidade;
+                                        valor = valor + 200 * quantidade;
+                                        break;
+                                    case 3:
+                                        System.out.println("Digite a quantidade que deseja comprar: ");
+                                        quantidade = input.nextInt();
+                                        pneu = pneu - quantidade;
+                                        valor = valor + 350 * quantidade;
+                                        break;
+                                    case 4:
+                                        System.out.println("Digite a quantidade que deseja comprar: ");
+                                        quantidade = input.nextInt();
+                                        escapamento = escapamento - quantidade;
+                                        valor = valor + 100 * quantidade;
+                                        break;
+                                    case 5:
+                                        System.out.println("Digite a quantidade que deseja comprar: ");
+                                        quantidade = input.nextInt();
+                                        capo = capo - quantidade;
+                                        valor = valor + 1000 * quantidade;
+                                        break;
+                                    case 6:
+                                        System.out.println();
+                                        System.out.println("PROGRAMA FINALIZADO");
+                                        break;
+                                    default:
+                                        System.out.println("Opcao Invalida");
+                                }
+                            }while(escolha2 != 6);
+                            System.out.println("O total da compra foi de: " + valor);
+                            break;
+                        case 2:
+                            new ProcessBuilder("cmd", "/c", "pause").inheritIO().start().waitFor();
+                            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                            do{
+                                System.out.println("        Estoque     ");
+                                System.out.println("<1> Para-choque: " + para + " VALOR: R$300,00");
+                                System.out.println("<2> Lanterna: " + lanterna + " VALOR: R$200,00");
+                                System.out.println("<3> Pneu: " + pneu + " VALOR: R$350,00");
+                                System.out.println("<4> Escapamento: " + escapamento + " VALOR: R$100,00");
+                                System.out.println("<5> Capo: " + capo + " VALOR: R$1000,00");
+                                System.out.println("<6> Finalizar o programa");
+                                System.out.println("Digite uma opção>: ");
+                                escolha3 = input.nextInt();
+                        
+                                switch(escolha3){
+                                    case 1:
+                                        System.out.println("Digite a quantidade que deseja adicionar ao estoque: ");
+                                        quantidade = input.nextInt();
+                                        para = para + quantidade;
+                                        break;
+                                    case 2:
+                                        System.out.println("Digite a quantidade que deseja adicionar ao estoque: ");
+                                        quantidade = input.nextInt();
+                                        lanterna = lanterna + quantidade;
+                                        break;
+                                    case 3:
+                                        System.out.println("Digite a quantidade que deseja adicionar ao estoque: ");
+                                        quantidade = input.nextInt();
+                                        pneu = pneu + quantidade;
+                                        break;
+                                    case 4:
+                                        System.out.println("Digite a quantidade que deseja adicionar ao estoque: ");
+                                        quantidade = input.nextInt();
+                                        escapamento = escapamento + quantidade;
+                                        break;
+                                    case 5:
+                                        System.out.println("Digite a quantidade que deseja adicionar ao estoque ");
+                                        quantidade = input.nextInt();
+                                        capo = capo + quantidade;
+                                        break;
+                                    case 6:
+                                        System.out.println();
+                                        System.out.println("PROGRAMA FINALIZADO");
+                                        break;
+                                    default:
+                                        System.out.println("Opcao Invalida");
+                                }
+                                }while(escolha3 != 6);
+                            break;
+                        case 3:
+                            System.out.println();
+                            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                            System.out.println("PROGRAMA FINALIZADO");
+                            break;
+                        default:
+                            System.out.println("Opcao Invalida");
+                    }
+                }while(escolha != 3);
+
+            } else {
+                System.out.println("Usuario não cadastrado");
+            }
+        }
+}
